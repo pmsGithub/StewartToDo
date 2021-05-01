@@ -53,7 +53,7 @@ extension ToDoFormView {
     var updateOrSaveButton: some View {
         Button( formVM.updating ? "Update" : "Save",
             action: formVM.updating ? updateToDo : addToDo )
-            .disabled(formVM.isDisabled)
+            .disabled(formVM.isDisabled)    // This func can disable any view to inhibit user interaction
     }
 }
 

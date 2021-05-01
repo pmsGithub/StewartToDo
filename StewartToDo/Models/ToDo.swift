@@ -8,7 +8,7 @@
 import Foundation
 
 struct ToDo: Identifiable, Codable {
-    var id: String = UUID().uuidString    // Needed for 'Identifiable' protocol
+    var id: String = UUID().uuidString    // Needed for 'Identifiable' protocol. .uuidString returns one string, rather than 16 bytes
     var name: String
     var completed: Bool = false
     
