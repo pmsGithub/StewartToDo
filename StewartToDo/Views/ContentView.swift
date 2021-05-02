@@ -46,9 +46,13 @@ struct ContentView: View {
         }
         .sheet(item: $modalType) { modalType in // func presents a sheet 
             modalType
+            // Could have just typed…
+            // .sheet(item: $modalType) { $0 }
         }
-        // Could have just typed…
-        // .sheet(item: $modalType) { $0 }
+        .alert(item: $dataStore.appError) { appError in
+            print("Alert is supposed to appear now…")
+            return Alert( title: Text("Bummer"), message: Text(appError.error.localizedDescription) )
+        }
     }
 }
 
